@@ -105,7 +105,7 @@ extension ListPresenter: ListPresenterInput {
 // MARK: ListInteractorOutput
 
 extension ListPresenter: ListInteractorOutput {
-    func didSave() {
+    func didSaveItems() {
         Task { @MainActor in
             view.presentAlert(title: "Saved", message: "Selected items saved.")
         }

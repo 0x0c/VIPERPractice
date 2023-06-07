@@ -21,7 +21,7 @@ protocol ListInteractorInput: AnyObject {
 protocol ListInteractorOutput: AnyObject {
     // MARK: Callback methods for presenter
 
-    func didSave()
+    func didSaveItems()
 }
 
 // MARK: - ListInteractor
@@ -60,6 +60,6 @@ extension ListInteractor: ListInteractorInput {
     }
 
     func saveItems(_ items: [ListItem]) {
-        presenter.didSave()
+        presenter.didSaveItems()
     }
 }
