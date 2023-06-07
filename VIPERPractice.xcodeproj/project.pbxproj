@@ -13,6 +13,23 @@
 		E9A8DF002A30AFDB00BE9CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A8DEFE2A30AFDB00BE9CEF /* Main.storyboard */; };
 		E9A8DF022A30AFDB00BE9CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A8DF012A30AFDB00BE9CEF /* Assets.xcassets */; };
 		E9A8DF052A30AFDB00BE9CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A8DF032A30AFDB00BE9CEF /* LaunchScreen.storyboard */; };
+		E9A8DF162A30B03B00BE9CEF /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF152A30B03B00BE9CEF /* ListInteractor.swift */; };
+		E9A8DF182A30B04200BE9CEF /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF172A30B04200BE9CEF /* ListPresenter.swift */; };
+		E9A8DF1A2A30B04E00BE9CEF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF192A30B04E00BE9CEF /* ListViewController.swift */; };
+		E9A8DF1C2A30B05600BE9CEF /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF1B2A30B05600BE9CEF /* ListRouter.swift */; };
+		E9A8DF232A30B39A00BE9CEF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF222A30B39A00BE9CEF /* UIColor+Hex.swift */; };
+		E9A8DF272A30B3C400BE9CEF /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF262A30B3C400BE9CEF /* ListCellViewModel.swift */; };
+		E9A8DF292A30B44400BE9CEF /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF282A30B44400BE9CEF /* ListItem.swift */; };
+		E9A8DF2B2A30B5F200BE9CEF /* ListSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF2A2A30B5F200BE9CEF /* ListSectionViewModel.swift */; };
+		E9A8DF302A30BAB200BE9CEF /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF2F2A30BAB200BE9CEF /* UIColor+Random.swift */; };
+		E9A8DF322A30BBFF00BE9CEF /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF312A30BBFF00BE9CEF /* ListSection.swift */; };
+		E9A8DF352A30BF8600BE9CEF /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = E9A8DF342A30BF8600BE9CEF /* Nuke */; };
+		E9A8DF372A30BF8700BE9CEF /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = E9A8DF362A30BF8700BE9CEF /* NukeExtensions */; };
+		E9A8DF3D2A30C19500BE9CEF /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF3B2A30C19500BE9CEF /* ListCell.swift */; };
+		E9A8DF3E2A30C19500BE9CEF /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A8DF3C2A30C19500BE9CEF /* ListCell.xib */; };
+		E9A8DF412A30C31200BE9CEF /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = E9A8DF402A30C31200BE9CEF /* Reusable */; };
+		E9A8DF432A30C3EE00BE9CEF /* ListMockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF422A30C3EE00BE9CEF /* ListMockRepository.swift */; };
+		E9A8DF482A30C5EE00BE9CEF /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8DF472A30C5EE00BE9CEF /* ListRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +41,20 @@
 		E9A8DF012A30AFDB00BE9CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9A8DF042A30AFDB00BE9CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9A8DF062A30AFDB00BE9CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A8DF152A30B03B00BE9CEF /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		E9A8DF172A30B04200BE9CEF /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		E9A8DF192A30B04E00BE9CEF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		E9A8DF1B2A30B05600BE9CEF /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		E9A8DF222A30B39A00BE9CEF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		E9A8DF262A30B3C400BE9CEF /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		E9A8DF282A30B44400BE9CEF /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		E9A8DF2A2A30B5F200BE9CEF /* ListSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionViewModel.swift; sourceTree = "<group>"; };
+		E9A8DF2F2A30BAB200BE9CEF /* UIColor+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
+		E9A8DF312A30BBFF00BE9CEF /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
+		E9A8DF3B2A30C19500BE9CEF /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		E9A8DF3C2A30C19500BE9CEF /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		E9A8DF422A30C3EE00BE9CEF /* ListMockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMockRepository.swift; sourceTree = "<group>"; };
+		E9A8DF472A30C5EE00BE9CEF /* ListRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A8DF352A30BF8600BE9CEF /* Nuke in Frameworks */,
+				E9A8DF372A30BF8700BE9CEF /* NukeExtensions in Frameworks */,
+				E9A8DF412A30C31200BE9CEF /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +90,12 @@
 		E9A8DEF72A30AFDB00BE9CEF /* VIPERPractice */ = {
 			isa = PBXGroup;
 			children = (
+				E9A8DF442A30C44500BE9CEF /* Mock */,
+				E9A8DF382A30C18700BE9CEF /* View */,
+				E9A8DF2E2A30BAAB00BE9CEF /* Extension */,
+				E9A8DF242A30B3BD00BE9CEF /* Model */,
+				E9A8DF252A30B3BD00BE9CEF /* ViewModel */,
+				E9A8DF132A30B02D00BE9CEF /* Module */,
 				E9A8DEF82A30AFDB00BE9CEF /* AppDelegate.swift */,
 				E9A8DEFA2A30AFDB00BE9CEF /* SceneDelegate.swift */,
 				E9A8DEFC2A30AFDB00BE9CEF /* ViewController.swift */,
@@ -65,6 +105,86 @@
 				E9A8DF062A30AFDB00BE9CEF /* Info.plist */,
 			);
 			path = VIPERPractice;
+			sourceTree = "<group>";
+		};
+		E9A8DF132A30B02D00BE9CEF /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF142A30B03600BE9CEF /* List */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		E9A8DF142A30B03600BE9CEF /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF472A30C5EE00BE9CEF /* ListRepository.swift */,
+				E9A8DF152A30B03B00BE9CEF /* ListInteractor.swift */,
+				E9A8DF172A30B04200BE9CEF /* ListPresenter.swift */,
+				E9A8DF192A30B04E00BE9CEF /* ListViewController.swift */,
+				E9A8DF1B2A30B05600BE9CEF /* ListRouter.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E9A8DF242A30B3BD00BE9CEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF282A30B44400BE9CEF /* ListItem.swift */,
+				E9A8DF312A30BBFF00BE9CEF /* ListSection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9A8DF252A30B3BD00BE9CEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF262A30B3C400BE9CEF /* ListCellViewModel.swift */,
+				E9A8DF2A2A30B5F200BE9CEF /* ListSectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E9A8DF2E2A30BAAB00BE9CEF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF222A30B39A00BE9CEF /* UIColor+Hex.swift */,
+				E9A8DF2F2A30BAB200BE9CEF /* UIColor+Random.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E9A8DF382A30C18700BE9CEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF392A30C18700BE9CEF /* TableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9A8DF392A30C18700BE9CEF /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF3A2A30C18700BE9CEF /* ListCell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		E9A8DF3A2A30C18700BE9CEF /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF3B2A30C19500BE9CEF /* ListCell.swift */,
+				E9A8DF3C2A30C19500BE9CEF /* ListCell.xib */,
+			);
+			path = ListCell;
+			sourceTree = "<group>";
+		};
+		E9A8DF442A30C44500BE9CEF /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8DF422A30C3EE00BE9CEF /* ListMockRepository.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +203,11 @@
 			dependencies = (
 			);
 			name = VIPERPractice;
+			packageProductDependencies = (
+				E9A8DF342A30BF8600BE9CEF /* Nuke */,
+				E9A8DF362A30BF8700BE9CEF /* NukeExtensions */,
+				E9A8DF402A30C31200BE9CEF /* Reusable */,
+			);
 			productName = VIPERPractice;
 			productReference = E9A8DEF52A30AFDB00BE9CEF /* VIPERPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +236,10 @@
 				Base,
 			);
 			mainGroup = E9A8DEEC2A30AFDB00BE9CEF;
+			packageReferences = (
+				E9A8DF332A30BF8600BE9CEF /* XCRemoteSwiftPackageReference "Nuke" */,
+				E9A8DF3F2A30C31200BE9CEF /* XCRemoteSwiftPackageReference "Reusable" */,
+			);
 			productRefGroup = E9A8DEF62A30AFDB00BE9CEF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A8DF052A30AFDB00BE9CEF /* LaunchScreen.storyboard in Resources */,
+				E9A8DF3E2A30C19500BE9CEF /* ListCell.xib in Resources */,
 				E9A8DF022A30AFDB00BE9CEF /* Assets.xcassets in Resources */,
 				E9A8DF002A30AFDB00BE9CEF /* Main.storyboard in Resources */,
 			);
@@ -138,8 +268,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A8DF182A30B04200BE9CEF /* ListPresenter.swift in Sources */,
+				E9A8DF1C2A30B05600BE9CEF /* ListRouter.swift in Sources */,
 				E9A8DEFD2A30AFDB00BE9CEF /* ViewController.swift in Sources */,
+				E9A8DF3D2A30C19500BE9CEF /* ListCell.swift in Sources */,
+				E9A8DF272A30B3C400BE9CEF /* ListCellViewModel.swift in Sources */,
+				E9A8DF432A30C3EE00BE9CEF /* ListMockRepository.swift in Sources */,
+				E9A8DF482A30C5EE00BE9CEF /* ListRepository.swift in Sources */,
+				E9A8DF292A30B44400BE9CEF /* ListItem.swift in Sources */,
+				E9A8DF322A30BBFF00BE9CEF /* ListSection.swift in Sources */,
+				E9A8DF2B2A30B5F200BE9CEF /* ListSectionViewModel.swift in Sources */,
+				E9A8DF232A30B39A00BE9CEF /* UIColor+Hex.swift in Sources */,
+				E9A8DF302A30BAB200BE9CEF /* UIColor+Random.swift in Sources */,
+				E9A8DF1A2A30B04E00BE9CEF /* ListViewController.swift in Sources */,
 				E9A8DEF92A30AFDB00BE9CEF /* AppDelegate.swift in Sources */,
+				E9A8DF162A30B03B00BE9CEF /* ListInteractor.swift in Sources */,
 				E9A8DEFB2A30AFDB00BE9CEF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +501,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9A8DF332A30BF8600BE9CEF /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+		E9A8DF3F2A30C31200BE9CEF /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9A8DF342A30BF8600BE9CEF /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9A8DF332A30BF8600BE9CEF /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		E9A8DF362A30BF8700BE9CEF /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9A8DF332A30BF8600BE9CEF /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		E9A8DF402A30C31200BE9CEF /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9A8DF3F2A30C31200BE9CEF /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9A8DEED2A30AFDB00BE9CEF /* Project object */;
 }

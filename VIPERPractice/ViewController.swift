@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func presentListModule(_ sender: Any) {
+        let viewController = ListRouter.assembleModule(repository: ListMockRepository())
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
