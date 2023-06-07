@@ -5,15 +5,12 @@
 //  Created by Akira Matsuda on 2023/06/07.
 //
 
-import Reusable
 import NukeExtensions
+import Reusable
 import UIKit
 
 class ListCell: UITableViewCell, NibReusable {
-    @IBOutlet private  weak var thumbnailImageView: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var subtitleLabel: UILabel!
-    @IBOutlet private weak var checkmarkImageView: UIImageView!
+    // MARK: Internal
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,4 +34,11 @@ class ListCell: UITableViewCell, NibReusable {
 
         // Configure the view for the selected state
     }
+
+    // MARK: Private
+
+    @IBOutlet private var thumbnailImageView: UIImageView!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var subtitleLabel: UILabel!
+    @IBOutlet private var checkmarkImageView: UIImageView!
 }

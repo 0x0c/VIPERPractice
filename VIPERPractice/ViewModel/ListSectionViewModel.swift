@@ -8,16 +8,24 @@
 import Foundation
 
 class ListSectionViewModel {
-    private let section: ListSection
-    var title: String {
-        return section.title
-    }
-    let items: [ListCellViewModel]
+    // MARK: Lifecycle
 
     init(section: ListSection) {
         self.section = section
-        self.items = section.items.map({
+        items = section.items.map {
             ListCellViewModel(item: $0)
-        })
+        }
     }
+
+    // MARK: Internal
+
+    let items: [ListCellViewModel]
+
+    var title: String {
+        return section.title
+    }
+
+    // MARK: Private
+
+    private let section: ListSection
 }

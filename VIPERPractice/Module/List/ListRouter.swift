@@ -7,16 +7,22 @@
 
 import UIKit
 
+// MARK: - ListRouterInput
+
 protocol ListRouterInput: AnyObject {
     // MARK: View transitions
 }
 
+// MARK: - ListRouter
+
 final class ListRouter {
-    private unowned let viewController: ListViewController
+    // MARK: Lifecycle
 
     init(viewController: ListViewController) {
         self.viewController = viewController
     }
+
+    // MARK: Internal
 
     static func assembleModule(repository: any ListRepositoryInterface) -> ListViewController {
         let view = ListViewController()
@@ -29,6 +35,12 @@ final class ListRouter {
 
         return view
     }
+
+    // MARK: Private
+
+    private unowned let viewController: ListViewController
 }
+
+// MARK: ListRouterInput
 
 extension ListRouter: ListRouterInput {}

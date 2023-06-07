@@ -8,11 +8,15 @@
 import Foundation
 
 struct ListSection {
-    let title: String
-    let items: [ListItem]
+    // MARK: Lifecycle
 
     init(title: String, items: [ListItem]) {
         self.title = title
         self.items = items
     }
+
+    // MARK: Internal
+
+    let title: String
+    let items: [ListItem]
 }

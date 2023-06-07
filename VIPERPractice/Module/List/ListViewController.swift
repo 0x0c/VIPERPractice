@@ -9,19 +9,26 @@ import Combine
 import Reusable
 import UIKit
 
+// MARK: - ListViewInput
+
 @MainActor
 protocol ListViewInput: AnyObject {
     // MARK: Methods called from presenter
+
     func reloadData()
     func updateRow(for viewModel: ListCellViewModel)
     func presentAlert(title: String, message: String)
 }
 
+// MARK: - ListViewController
+
 final class ListViewController: UITableViewController {
+    // MARK: Internal
+
     // MARK: Stored instance properties
 
     var presenter: ListPresenterInput!
-    private var cancellable = Set<AnyCancellable>()
+
     // MARK: Computed instance properties
 
     // MARK: IBOutlets
@@ -60,7 +67,7 @@ final class ListViewController: UITableViewController {
             }.store(in: &cancellable)
         presenter.viewDidLoad()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.setContentOffset(
@@ -74,13 +81,8 @@ final class ListViewController: UITableViewController {
         presenter.didSaveButtonPress()
     }
 
-    @objc
-    private func refresh() {
-        presenter.refreshData()
-    }
-
     // MARK: Other private methods
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return presenter.sections.count
     }
@@ -105,7 +107,18 @@ final class ListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return presenter.sections[section].title
     }
+
+    // MARK: Private
+
+    private var cancellable = Set<AnyCancellable>()
+
+    @objc
+    private func refresh() {
+        presenter.refreshData()
+    }
 }
+
+// MARK: ListViewInput
 
 extension ListViewController: ListViewInput {
     func reloadData() {

@@ -9,11 +9,11 @@ import UIKit
 
 final class ListMockRepository: ListRepositoryInterface {
     func loadSections() async throws -> [ListSection] {
-        try await Task.sleep(for: .seconds(Int.random(in: 1...3)))
+        try await Task.sleep(for: .seconds(Int.random(in: 1 ... 3)))
         var sections = [ListSection]()
-        for index in 0...Int.random(in: 0...5) {
+        for index in 0 ... Int.random(in: 0 ... 5) {
             var items = [ListItem]()
-            for _ in 0...Int.random(in: 0...5) {
+            for _ in 0 ... Int.random(in: 0 ... 5) {
                 items.append(
                     ListItem(
                         title: "title",

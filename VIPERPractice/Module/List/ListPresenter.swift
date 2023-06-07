@@ -8,6 +8,8 @@
 import Combine
 import Foundation
 
+// MARK: - ListPresenterInput
+
 @MainActor
 protocol ListPresenterInput: AnyObject {
     var sections: [ListSectionViewModel] { get }
@@ -18,21 +20,16 @@ protocol ListPresenterInput: AnyObject {
     func viewDidLoad()
 
     // MARK: Other methods called from View
+
     func refreshData()
     func didSelectRow(of viewModel: ListCellViewModel)
     func didSaveButtonPress()
 }
 
+// MARK: - ListPresenter
+
 final class ListPresenter {
-    // MARK: VIPER properties
-
-    weak var view: ListViewInput!
-    var interactor: ListInteractorInput!
-    var router: ListRouterInput!
-    @Published private var isLoading = false
-
-    // MARK: Stored instance properties
-    private(set) var sections: [ListSectionViewModel] = []
+    // MARK: Lifecycle
 
     // MARK: Computed instance properties
 
@@ -41,7 +38,25 @@ final class ListPresenter {
         self.interactor = interactor
         self.router = router
     }
+
+    // MARK: Internal
+
+    // MARK: VIPER properties
+
+    weak var view: ListViewInput!
+    var interactor: ListInteractorInput!
+    var router: ListRouterInput!
+
+    // MARK: Stored instance properties
+
+    private(set) var sections: [ListSectionViewModel] = []
+
+    // MARK: Private
+
+    @Published private var isLoading = false
 }
+
+// MARK: ListPresenterInput
 
 extension ListPresenter: ListPresenterInput {
     var isLoadingPublisher: Published<Bool>.Publisher {
@@ -78,13 +93,16 @@ extension ListPresenter: ListPresenterInput {
                     ListSectionViewModel(section: $0)
                 }
                 view?.reloadData()
-            } catch {
+            }
+            catch {
                 // TODO: handle error
             }
             isLoading = false
         }
     }
 }
+
+// MARK: ListInteractorOutput
 
 extension ListPresenter: ListInteractorOutput {
     func didSave() {
