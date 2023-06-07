@@ -23,7 +23,6 @@
 
 --enable isEmpty, markTypes, sortedSwitchCases, wrapConditionalBodies, wrapEnumCases, organizeDeclarations
 --beforemarks
---acronyms
 
 # file options
 

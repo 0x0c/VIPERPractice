@@ -29,21 +29,11 @@ protocol ListInteractorOutput: AnyObject {
 final class ListInteractor {
     // MARK: Lifecycle
 
-    // MARK: Stored instance properties
-
-    // MARK: Computed instance properties
-
-    // MARK: Initializer
-
     init(repository: any ListRepositoryInterface) {
         self.repository = repository
     }
 
-    // MARK: Other private methods
-
     // MARK: Internal
-
-    // MARK: VIPER property
 
     weak var presenter: ListInteractorOutput!
 

@@ -25,15 +25,7 @@ protocol ListViewInput: AnyObject {
 final class ListViewController: UITableViewController {
     // MARK: Internal
 
-    // MARK: Stored instance properties
-
     var presenter: ListPresenterInput!
-
-    // MARK: Computed instance properties
-
-    // MARK: IBOutlets
-
-    // MARK: View Life-Cycle methods
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,11 +15,7 @@ protocol ListPresenterInput: AnyObject {
     var sections: [ListSectionViewModel] { get }
     var isLoadingPublisher: Published<Bool>.Publisher { get }
 
-    // MARK: View Life-Cycle methods
-
     func viewDidLoad()
-
-    // MARK: Other methods called from View
 
     func refreshData()
     func didSelectRow(of viewModel: ListCellViewModel)
@@ -31,8 +27,6 @@ protocol ListPresenterInput: AnyObject {
 final class ListPresenter {
     // MARK: Lifecycle
 
-    // MARK: Computed instance properties
-
     init(view: ListViewInput, interactor: ListInteractorInput, router: ListRouterInput) {
         self.view = view
         self.interactor = interactor
@@ -41,13 +35,9 @@ final class ListPresenter {
 
     // MARK: Internal
 
-    // MARK: VIPER properties
-
     weak var view: ListViewInput!
     var interactor: ListInteractorInput!
     var router: ListRouterInput!
-
-    // MARK: Stored instance properties
 
     private(set) var sections: [ListSectionViewModel] = []
 
@@ -74,7 +64,7 @@ extension ListPresenter: ListPresenterInput {
 
     func didSaveButtonPress() {
         let items = sections.flatMap { section in
-            section.items.filter(\.checked).map { $0.item }
+            section.items.filter(\.checked).map(\.item)
         }
         if items.isEmpty {
             view.presentAlert(title: "Failed to save items", message: "No items selected.")
