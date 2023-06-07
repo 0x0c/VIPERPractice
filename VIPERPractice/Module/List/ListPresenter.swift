@@ -19,7 +19,7 @@ protocol ListPresenterInput: AnyObject {
 
     // MARK: Other methods called from View
     func refreshData()
-    func didSelect(viewModel: ListCellViewModel)
+    func didSelectRow(of viewModel: ListCellViewModel)
     func didSaveButtonPress()
 }
 
@@ -52,7 +52,7 @@ extension ListPresenter: ListPresenterInput {
         refreshData()
     }
 
-    func didSelect(viewModel: ListCellViewModel) {
+    func didSelectRow(of viewModel: ListCellViewModel) {
         viewModel.checked.toggle()
         view.updateRow(for: viewModel)
     }

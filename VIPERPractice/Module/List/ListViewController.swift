@@ -99,7 +99,7 @@ final class ListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewModel = presenter.sections[indexPath.section].items[indexPath.row]
-        presenter.didSelect(viewModel: viewModel)
+        presenter.didSelectRow(of: viewModel)
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
