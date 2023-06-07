@@ -13,6 +13,8 @@ import UIKit
 protocol ListViewInput: AnyObject {
     // MARK: Methods called from presenter
     func reloadData()
+    func updateRow(for viewModel: ListCellViewModel)
+    func presentAlert(title: String, message: String)
 }
 
 final class ListViewController: UITableViewController {
@@ -28,11 +30,20 @@ final class ListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "List"
         tableView.register(cellType: ListCell.self)
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         self.refreshControl = refreshControl
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(
+                title: "Save",
+                style: .done,
+                target: self,
+                action: #selector(didSaveButtonPress)
+            )
+        ]
         presenter.isLoadingPublisher
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
@@ -59,6 +70,11 @@ final class ListViewController: UITableViewController {
     }
 
     @objc
+    func didSaveButtonPress() {
+        presenter.didSaveButtonPress()
+    }
+
+    @objc
     private func refresh() {
         presenter.refreshData()
     }
@@ -75,11 +91,17 @@ final class ListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as ListCell
-        let item = presenter.sections[indexPath.section].items[indexPath.row]
-        cell.configure(for: item)
+        let viewModel = presenter.sections[indexPath.section].items[indexPath.row]
+        viewModel.indexPath = indexPath
+        cell.configure(for: viewModel)
         return cell
     }
-    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewModel = presenter.sections[indexPath.section].items[indexPath.row]
+        presenter.didSelect(viewModel: viewModel)
+    }
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return presenter.sections[section].title
     }
@@ -88,5 +110,22 @@ final class ListViewController: UITableViewController {
 extension ListViewController: ListViewInput {
     func reloadData() {
         tableView.reloadData()
+    }
+
+    func updateRow(for viewModel: ListCellViewModel) {
+        guard let indexPath = viewModel.indexPath else {
+            return
+        }
+        tableView.reloadRows(at: [indexPath], with: .fade)
+    }
+
+    func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Done", style: .default))
+        present(alert, animated: true)
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class ListCellViewModel {
-    private let item: ListItem
+    let item: ListItem
 
     var title: String {
         return item.title
@@ -25,6 +25,9 @@ class ListCellViewModel {
     var backgroundColor: UIColor? {
         return UIColor(hexString: item.backgroundColorString)
     }
+    
+    var checked: Bool = false
+    var indexPath: IndexPath?
 
     init(item: ListItem) {
         self.item = item

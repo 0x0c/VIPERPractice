@@ -13,12 +13,13 @@ class ListCell: UITableViewCell, NibReusable {
     @IBOutlet private  weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
+    @IBOutlet private weak var checkmarkImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     func configure(for viewModel: ListCellViewModel) {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
@@ -28,6 +29,7 @@ class ListCell: UITableViewCell, NibReusable {
             options: ImageLoadingOptions(transition: .fadeIn(duration: 0.25)),
             into: thumbnailImageView
         )
+        checkmarkImageView.isHidden = !viewModel.checked
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

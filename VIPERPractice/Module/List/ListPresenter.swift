@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 
+@MainActor
 protocol ListPresenterInput: AnyObject {
     var sections: [ListSectionViewModel] { get }
     var isLoadingPublisher: Published<Bool>.Publisher { get }
@@ -18,6 +19,8 @@ protocol ListPresenterInput: AnyObject {
 
     // MARK: Other methods called from View
     func refreshData()
+    func didSelect(viewModel: ListCellViewModel)
+    func didSaveButtonPress()
 }
 
 final class ListPresenter {
@@ -48,16 +51,33 @@ extension ListPresenter: ListPresenterInput {
     func viewDidLoad() {
         refreshData()
     }
-    
+
+    func didSelect(viewModel: ListCellViewModel) {
+        viewModel.checked.toggle()
+        view.updateRow(for: viewModel)
+    }
+
+    func didSaveButtonPress() {
+        let items = sections.flatMap { section in
+            section.items.filter(\.checked).map { $0.item }
+        }
+        if items.isEmpty {
+            view.presentAlert(title: "Failed to save items", message: "No items selected.")
+        }
+        else {
+            interactor.saveItems(items)
+        }
+    }
+
     func refreshData() {
         Task { [weak view] in
             isLoading = true
             do {
-                let sections = try await interactor.loadSection()
+                let sections = try await interactor.loadSections()
                 self.sections = sections.map {
                     ListSectionViewModel(section: $0)
                 }
-                await view?.reloadData()
+                view?.reloadData()
             } catch {
                 // TODO: handle error
             }
@@ -66,4 +86,10 @@ extension ListPresenter: ListPresenterInput {
     }
 }
 
-extension ListPresenter: ListInteractorOutput {}
+extension ListPresenter: ListInteractorOutput {
+    func didSave() {
+        Task { @MainActor in
+            view.presentAlert(title: "Saved", message: "Selected items saved.")
+        }
+    }
+}

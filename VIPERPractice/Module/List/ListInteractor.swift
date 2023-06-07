@@ -10,11 +10,13 @@ import Foundation
 protocol ListInteractorInput: AnyObject {
     // MARK: Methods called from presenter
 
-    func loadSection() async throws -> [ListSection]
+    func loadSections() async throws -> [ListSection]
+    func saveItems(_ items: [ListItem])
 }
 
 protocol ListInteractorOutput: AnyObject {
-    // MARK: Methods called from repository
+    // MARK: Callback methods for presenter
+    func didSave()
 }
 
 final class ListInteractor {
@@ -36,7 +38,11 @@ final class ListInteractor {
 }
 
 extension ListInteractor: ListInteractorInput {
-    func loadSection() async throws -> [ListSection] {
-        return try await repository.loadSection()
+    func loadSections() async throws -> [ListSection] {
+        return try await repository.loadSections()
+    }
+
+    func saveItems(_ items: [ListItem]) {
+        presenter.didSave()
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListRepositoryInterface {
-    func loadSection() async throws -> [ListSection]
+    func loadSections() async throws -> [ListSection]
 }

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dib-5H-JxU">
-                                <rect key="frame" x="68" y="4.3333333333333321" width="252" height="51.333333333333343"/>
+                                <rect key="frame" x="68" y="4.3333333333333321" width="212" height="51.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLW-7e-LgF">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
@@ -44,6 +45,20 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7ea-xD-GWQ">
+                                <rect key="frame" x="288" y="23.666666666666689" width="16" height="12.000000000000011"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="2Cx-tx-Y22"/>
+                                    <constraint firstAttribute="width" constant="16" id="MHI-eH-C4e"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpr-gE-fIX">
+                                <rect key="frame" x="312" y="0.0" width="8" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="kto-uV-a4e"/>
+                                </constraints>
+                            </view>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -56,6 +71,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="checkmarkImageView" destination="7ea-xD-GWQ" id="Vcn-DT-KNo"/>
                 <outlet property="subtitleLabel" destination="Beq-bN-mWa" id="pvx-Oe-CpV"/>
                 <outlet property="thumbnailImageView" destination="hPa-yn-L4r" id="ENE-x8-ZBO"/>
                 <outlet property="titleLabel" destination="nLW-7e-LgF" id="iPl-FX-TeW"/>
@@ -63,4 +79,10 @@
             <point key="canvasLocation" x="83.969465648854964" y="-2.4647887323943665"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
